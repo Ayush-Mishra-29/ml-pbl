@@ -1,0 +1,374 @@
+{
+  "trained_at_utc": "2026-10-20T15:00:52+00:00",
+  "sklearn_version": "1.9.1",
+  "dataset": "personal_finance_dataset_cleaned_flagged.csv (user supplied)",
+  "dataset_note": "Provenance not verified. Every description follows the template 'Transaction at <Merchant>', classes are almost perfectly balanced and each merchant maps to exactly one category, so the data appears synthetic. Do not describe it as real bank transactions in the report.",
+  "label_mode": "five",
+  "classes": [
+    "Bills",
+    "Entertainment",
+    "Food",
+    "Shopping",
+    "Transport"
+  ],
+  "rows_after_cleaning": 5621,
+  "n_train": 4496,
+  "n_test": 1125,
+  "preprocessing_report": {
+    "rows_in": 8000,
+    "mode": "five",
+    "dropped": {
+      "native category not part of 'five' mode": 2379
+    },
+    "unmapped_native_categories": {
+      "Healthcare": 804,
+      "Travel": 789,
+      "Grocery": 786
+    },
+    "rows_out": 5621,
+    "class_counts": {
+      "Shopping": 2401,
+      "Entertainment": 824,
+      "Food": 822,
+      "Bills": 788,
+      "Transport": 786
+    },
+    "imbalance_ratio_max_to_min": 3.05,
+    "unique_merchant_keys": 79
+  },
+  "decision_tree_depth_search": {
+    "10": 0.3293487113143356,
+    "25": 0.6719389147136449,
+    "50": 1.0,
+    "None": 1.0
+  },
+  "decision_tree_max_depth": 50,
+  "selected_model": "Naive Bayes",
+  "selection_rule": "highest 5-fold CV macro-F1 on the training split; ties -> simpler model (Naive Bayes > Decision Tree > Random Forest)",
+  "results": {
+    "Naive Bayes": {
+      "train_seconds": 0.0631052789999842,
+      "train_cv": {
+        "f1_macro_mean": 1.0,
+        "f1_macro_std": 0.0
+      },
+      "test": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "precision_weighted": 1.0,
+        "recall_weighted": 1.0,
+        "f1_weighted": 1.0,
+        "per_class": {
+          "Bills": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 158.0
+          },
+          "Entertainment": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 165.0
+          },
+          "Food": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 164.0
+          },
+          "Shopping": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 481.0
+          },
+          "Transport": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 157.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1125.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1125.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            158,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            165,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            164,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            481,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            157
+          ]
+        ],
+        "predict_seconds_total": 0.013157317999997531,
+        "predict_ms_per_row": 0.011695393777775584
+      },
+      "unseen_merchant_cv": {
+        "f1_macro_mean": 0.11473167626928642,
+        "f1_macro_std": 0.006793551985558423,
+        "accuracy_mean": 0.4029796688703075
+      },
+      "n_features": 143
+    },
+    "Decision Tree": {
+      "train_seconds": 0.049460384000013846,
+      "train_cv": {
+        "f1_macro_mean": 1.0,
+        "f1_macro_std": 0.0
+      },
+      "test": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "precision_weighted": 1.0,
+        "recall_weighted": 1.0,
+        "f1_weighted": 1.0,
+        "per_class": {
+          "Bills": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 158.0
+          },
+          "Entertainment": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 165.0
+          },
+          "Food": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 164.0
+          },
+          "Shopping": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 481.0
+          },
+          "Transport": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 157.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1125.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1125.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            158,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            165,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            164,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            481,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            157
+          ]
+        ],
+        "predict_seconds_total": 0.011391192999980149,
+        "predict_ms_per_row": 0.010125504888871243
+      },
+      "unseen_merchant_cv": {
+        "f1_macro_mean": 0.11669677890542599,
+        "f1_macro_std": 0.005541612411464493,
+        "accuracy_mean": 0.41244505011482985
+      },
+      "n_features": 143
+    },
+    "Random Forest": {
+      "train_seconds": 0.7133172540000032,
+      "train_cv": {
+        "f1_macro_mean": 1.0,
+        "f1_macro_std": 0.0
+      },
+      "test": {
+        "accuracy": 1.0,
+        "precision_macro": 1.0,
+        "recall_macro": 1.0,
+        "f1_macro": 1.0,
+        "precision_weighted": 1.0,
+        "recall_weighted": 1.0,
+        "f1_weighted": 1.0,
+        "per_class": {
+          "Bills": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 158.0
+          },
+          "Entertainment": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 165.0
+          },
+          "Food": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 164.0
+          },
+          "Shopping": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 481.0
+          },
+          "Transport": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 157.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1125.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1125.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            158,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            165,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            164,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            481,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            157
+          ]
+        ],
+        "predict_seconds_total": 0.08447362799998359,
+        "predict_ms_per_row": 0.07508766933331874
+      },
+      "unseen_merchant_cv": {
+        "f1_macro_mean": 0.11972889901884579,
+        "f1_macro_std": 0.0022931393196571146,
+        "accuracy_mean": 0.4272848477539529
+      },
+      "n_features": 143
+    }
+  },
+  "limitations": [
+    "Dataset appears synthetic/templated; scores do not predict real-world accuracy.",
+    "A random split puts the same merchants in train and test, which inflates scores.",
+    "Unseen-merchant CV shows how the word-based model copes with new merchant names.",
+    "Model confidence is not a calibrated probability."
+  ]
+}
