@@ -46,7 +46,18 @@ def load_model():
 
 @st.cache_data
 def load_transactions():
-    path = config.PROCESSED_DIR / "clean_five.csv"
+    from pathlib import Path
+import pandas as pd
+
+BASE_DIR = Path(__file__).resolve().parent
+
+DATA_PATH = BASE_DIR / "data" / "processed" / "clean_five.csv"
+
+if DATA_PATH.exists():
+    df = pd.read_csv(DATA_PATH)
+    print("Dataset loaded successfully!")
+else:
+    st.warning(f"Dataset not found at: {DATA_PATH}")
     if not path.exists():
         return pd.DataFrame()
     frame = pd.read_csv(path, parse_dates=["date"])
