@@ -10,17 +10,10 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Private financial data - never commit
-data/raw/*
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-*.db
-*.sqlite
-*.sqlite3
-feedback/
+
 
 # Trained models (may encode private vocabulary)
-models/*.joblib
+
 
 # Editor / OS
 .vscode/

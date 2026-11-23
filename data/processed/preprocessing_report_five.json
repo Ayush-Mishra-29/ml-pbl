@@ -1,0 +1,22 @@
+{
+  "rows_in": 8000,
+  "mode": "five",
+  "dropped": {
+    "native category not part of 'five' mode": 2379
+  },
+  "unmapped_native_categories": {
+    "Healthcare": 804,
+    "Travel": 789,
+    "Grocery": 786
+  },
+  "rows_out": 5621,
+  "class_counts": {
+    "Shopping": 2401,
+    "Entertainment": 824,
+    "Food": 822,
+    "Bills": 788,
+    "Transport": 786
+  },
+  "imbalance_ratio_max_to_min": 3.05,
+  "unique_merchant_keys": 79
+}
